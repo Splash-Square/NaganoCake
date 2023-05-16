@@ -1,0 +1,2 @@
+class Genru < ApplicationRecord
+end
