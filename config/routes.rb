@@ -1,24 +1,17 @@
 Rails.application.routes.draw do
 
   namespace :admin do
-    get 'items/index'
-    get 'items/new'
-    get 'items/show'
-    get 'items/edit'
-  end
-  namespace :admin do
     get 'homes/top'
+    resources :items, only: [:index, :new, :show, :edit, :create]
   end
+  
   namespace :public do
-    get 'addresses/index'
-    get 'addresses/edit'
-  end
-  namespace :public do
-    get 'orders/new'
+    resources :addresses, only: [:index, :edit, :create, :update, :destroy]
+    resources :orders, only: [:new, :index, :show]
     get 'orders/completed'
-    get 'orders/index'
-    get 'orders/show'
+    post 'orders/confirm'
   end
+  
   # 顧客用
 # URL /customers/sign_in ...
 devise_for :customers,skip: [:passwords], controllers: {
