@@ -1,20 +1,17 @@
 Rails.application.routes.draw do
 
   namespace :public do
-    get 'cart_items/index'
-  end
-  namespace :public do
-    get 'customers/show'
-    get 'customers/edit'
-    get 'customers/confirm_withdraw'
-  end
-  namespace :public do
-    get 'items/index'
-    get 'items/show'
-  end
-  namespace :public do
-    get 'homes/top'
+    root to: "homes#top"
     get 'homes/about'
+    resources :cart_items, only: [:index, :update, :destroy, :create]    #カート内商品一括削除all_destroy未記述
+    resources :customers, only: [:show, :edit, :update]                   #退会処理withdraw未記述
+    get 'customers/confirm_withdraw' =>"customers#confirm_withdraw"
+    resources :items, only: [:index, :show]
+
+    resources :registrations, only: [:new, :create]
+    resources :sessions, only: [:new, :create]
+
+
   end
   # 顧客用
 # URL /customers/sign_in ...
