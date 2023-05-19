@@ -3,8 +3,6 @@ class Admin::GenresController < ApplicationController
   end
 
   def create
-    @genre = Genre.new(genre_params)
-    @genre.save
   end
 
   def edit
