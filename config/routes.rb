@@ -21,7 +21,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     resources :customers, only: [:index, :show, :edit, :uptade]
     resources :order_details, only: [:update]
     resources :items, only: [:index, :new, :show, :edit, :create]
-    resources :sessions, only: [:new, :create]
+    resources :sessions, only: [:new, :create, :destroy]
 
   end
 
@@ -37,7 +37,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     get 'customers/confirm_withdraw' =>"customers#confirm_withdraw"
     resources :items, only: [:index, :show]
     resources :registrations, only: [:new, :create]
-    resources :sessions, only: [:new, :create]
+    resources :sessions, only: [:new, :create, :destroy]
 
   end
 
