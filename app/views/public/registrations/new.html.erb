@@ -1,29 +1,107 @@
-<h2>Sign up</h2>
+      <h2>新規会員登録</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "public/shared/error_messages", resource: resource %>
+      <table>
+        <%= form_with model: @customer, url: customer_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+        <tr>
+          <th>名前</th>
+            <td>
+              <div class="field">
+                <%= f.label :family_name %><br />
+                <%= f.text_field :family_name, autofocus: true, class: "" %>
+              </div>
+            </td>
+            <td>
+              <div class="field">
+                <%= f.label :first_name %><br />
+                <%= f.text_field :first_name, autofocus: true, class: "" %>
+              </div>
+            </td>
+        </tr>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+        <tr>
+          <th>フリガナ</th>
+            <td>
+              <div class="field">
+                <%= f.label :family_name_kana %><br />
+                <%= f.text_field :family_name_kana, autofocus: true, class: "" %>
+              </div>
+            </td>
+            <td>
+              <div class="field">
+                <%= f.label :first_name_kana %><br />
+                <%= f.text_field :first_name_kana, autofocus: true, class: "" %>
+              </div>
+            </td>
+        </tr>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+        <tr>
+          <th>メールアドレス</th>
+            <td>
+              <div class="field">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, class: "email" %>
+              </div>
+            </td>
+        </tr>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+        <tr>
+          <th>郵便番号</th>
+            <td>
+              <div class="field">
+                <%= f.label :post_code %><br />
+                <%= f.text_field :post_code, autofocus: true, class: "" %>
+              </div>
+            </td>
+        </tr>
 
-<%= render "public/shared/links" %>
+        <tr>
+          <th>住所</th>
+            <td>
+              <div class="field">
+                <%= f.label :address %><br />
+                <%= f.text_field :address, autofocus: true, class: "" %>
+              </div>
+            </td>
+        </tr>
+
+        <tr>
+          <th>電話番号</th>
+            <td>
+              <div class="field">
+                <%= f.label :phone_number %><br />
+                <%= f.text_field :phone_number, autofocus: true, class: "" %>
+              </div>
+            </td>
+        </tr>
+
+        <tr>
+          <th>パスワード（6文字以上）</th>
+          　<td>
+              <div class="field">
+                <%= f.label :password %>
+                <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %><br />
+                <%= f.password_field :password, autocomplete: "off", class: "password" %>
+              </div>
+            </td>
+        </tr>
+
+          <th>パスワード（確認用）</th>
+          　<td>
+              <div class="field">
+              <%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "off", class: "password_confirm" %>
+              </div>
+            </td>
+        </tr>
+
+            <div class="actions">
+              <%= f.submit "新規登録" ,class: 'btn btn-sm btn-success' %>
+            </div>
+          <% end %>
+      </table>
+
+
+
