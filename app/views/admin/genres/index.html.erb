@@ -1,22 +1,23 @@
 <div class="container">
  <p>ジャンル一覧・追加</p>
-  <div class="row"> 
-   <div class="col-10"> 
-    <table class="table">
-     <tr>
-      <%= form_with model: @genre, url: admin_genres_path do |f| %>
+  <div class="row">
+   <div class="col-10">
+    <%= form_with model: @genre, url: admin_genres_path do |f| %>
+     <table class="table">
+      <tr>
        <td>ジャンル名</td>
        <td><%= f.text_field :item_genre %></td>
        <td><%= f.submit '新規登録', class: "btn-success btn-sm mx-auto" %></td>
-      <% end %>
-     </tr>
-    </table>
+      </tr>
+     </table>
+    <% end %>
    </div>
  </div>
- 
-   <div class="row"> 
-    <div class="col-5"> 
+
+   <div class="row">
+    <div class="col-5">
      <table class="table">
+      <thead>
       <tr>
        <th>ジャンル</th>
        <th></th>
@@ -32,4 +33,4 @@
     </div>
    </div>
   </div>
-</div> 
+</div>
