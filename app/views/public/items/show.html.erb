@@ -11,11 +11,13 @@
       <p><%= @item.item_description %></p><br><br><br><br><br>
       <p><%= (@item.price * 1.1).round.to_s(:delimited)  %>（税込）円</p><br>
 
+      <%= select("cart_item", "quantity", ["1", "2", "3"], { include_blank: "個数選択" }) %>
+      <%= link_to "カートに入れる", cart_items_path, class: "btn btn-success" %>
     </div>
   </div>
   <div class="row">
     <div class="col-md-2 mx-auto">
-      <%= link_to "カートに入れる", cart_items_path, class: "btn btn-success" %>
+
     </div>
   </div>
 </div>
