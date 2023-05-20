@@ -1,30 +1,30 @@
 
 <h1>マイページ</h1>
 <h2>登録情報</h2>
-<p><%= link_to '編集する', edit_customer_path,class: 'btn btn-sm btn-success' %></p>
+<p><%= link_to '編集する', edit_customers_path,class: 'btn btn-sm btn-success' %></p>
 
 <table>
   <tr>
   <th>氏名</th>
-    <td><%= @customer.family_name %><%= @customer.first_name %></td>
+    <td><%= current_customer.family_name %><%= current_customer.first_name %></td>
   </tr>
   <tr>
   <th>カナ</th>
-    <td><%= @customer.family_name_kana %><%= @customer.first_name_kana %></td>
+    <td><%= current_customer.family_name_kana %><%= current_customer.first_name_kana %></td>
   </tr>
   <tr>
   <th>郵便番号</th>
-    <td><%= @customer.post_code %></td>
+    <td><%= current_customer.post_code %></td>
   </tr>
   <tr>
   <th>住所</th>
-    <td><%= @customer.post_code %></td>
+    <td><%= current_customer.address %></td>
   </tr>
     <th>電話番号</th>
-    <td><%= @customer.address %></td>
+    <td><%= current_customer.phone_number %></td>
   </tr>
     <th>メールアドレス</th>
-    <td><%= @customer.email %></td>
+    <td><%= current_customer.email %></td>
   </tr>
 </table>
 

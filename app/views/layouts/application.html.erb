@@ -12,7 +12,13 @@
 
   </head>
   <body>
-    <%= render 'layouts/header' %>
+    <% if request.path.match(/\/admin(\/)?/) %>
+    <p>admin</p>
+      <%= render 'layouts/headeradmin' %>
+    <% else %>
+    <p>customer</p>
+      <%= render 'layouts/headercustomer' %>
+    <% end %>
       <main>
         <p id="notice"><%= notice %></p>
         <%= flash[:notice] %>

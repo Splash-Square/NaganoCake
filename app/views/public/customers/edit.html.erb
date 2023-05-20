@@ -4,18 +4,18 @@
 <h1>会員情報編集</h1>
     <%= flash[:notice] %>
 
-    <% if @customer.errors.any? %>
-        <%= @customer.errors.count %> errors prohibited this book from being saved:
+    <% if current_customer.errors.any? %>
+        <%= current_customer.errors.count %> errors prohibited this book from being saved:
         <ul>
-          <% @customer.errors.full_messages.each do |message| %>
+          <% current_customer.errors.full_messages.each do |message| %>
             <li><%= message %></li>
           <% end %>
         </ul>
         <% end %>
 
-      <table>
-        <%= form_with model: @customer, url: customer_path, local: true do |f| %>
 
+        <%= form_with model: current_customer, url: customer_path, local: true do |f| %>
+      <table>
         <tr>
           <th>名前</th>
             <td>
@@ -89,7 +89,7 @@
         </tr>
       </table>
             <div class="actions">
-                      <%= f.submit '編集内容を保存',class: 'btn btn-sm btn-success' %>
+                <%= f.submit '編集内容を保存',class: 'btn btn-sm btn-success' %>
             </div>
           <% end %>
 
