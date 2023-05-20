@@ -2,19 +2,8 @@
 <p>Find me in app/views/public/customers/edit.html.erb</p>
 
 <h1>会員情報編集</h1>
-    <%= flash[:notice] %>
 
-    <% if current_customer.errors.any? %>
-        <%= current_customer.errors.count %> errors prohibited this book from being saved:
-        <ul>
-          <% current_customer.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-        <% end %>
-
-
-        <%= form_with model: current_customer, url: customer_path, local: true do |f| %>
+        <%= form_with model: current_customer, url: customers_update_path, local: true do |f| %>
       <table>
         <tr>
           <th>名前</th>
