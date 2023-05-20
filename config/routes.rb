@@ -18,9 +18,9 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     root to: 'homes#top'
     resources :genres, only: [:index, :create, :edit, :update]
     resources :orders, only: [:show, :update]
-    resources :customers, only: [:index, :show, :edit, :uptade]
+    resources :customers, only: [:index, :show, :edit, :update]
     resources :order_details, only: [:update]
-    resources :items, only: [:index, :new, :show, :edit, :create]
+    resources :items, only: [:index, :new, :show, :edit, :create, :update]
     resources :sessions, only: [:new, :create, :destroy]
 
   end
