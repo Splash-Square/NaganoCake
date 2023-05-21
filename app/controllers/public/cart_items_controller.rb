@@ -7,13 +7,14 @@ class Public::CartItemsController < ApplicationController
   end
 
   def destroy
+    current_customer.cart_items.find(params[:id]).destroy
 
+    redirect_to cart_items_path
   end
 
   def all_destroy
-    @cart_items = current_customer.cart_items.all
-
-    @Cart_items.destroy_all
+    current_customer.cart_items.destroy_all
+    
     redirect_to cart_items_path
   end
 
