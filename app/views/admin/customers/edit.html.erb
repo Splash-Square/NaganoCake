@@ -7,7 +7,7 @@
           <th><h5><%= @customer.family_name %><%= @customer.first_name %>さんの会員情報編集</h></th>
         </thead>
         <tbody>
-          <div class="form-group">
+          <div class='form-group'>
             <tr><td>会員ID</td><td><%= @customer.id %></td></tr>
             <tr><td>氏名</td><td><%= f.text_field :family_name %></td>
               <td><%= f.text_field :first_name %></td>
@@ -26,12 +26,12 @@
             <tr><td>会員ステータス</td>
               <td>
                 <%= f.radio_button :is_deleted, false %>
-                <%= f.label :is_deleted, "有効" %>
+                <%= f.label :is_deleted, '有効' %>
                 <%= f.radio_button :is_deleted, true %>
-                <%= f.label :is_deleted , "退会" %>
+                <%= f.label :is_deleted , '退会' %>
               </td>
             </tr>
-            <tr><td><%= f.submit '変更を保存',class:"btn btn-success" %></td></tr>
+            <tr><td><%= f.submit '変更を保存',class:'btn btn-success' %></td></tr>
           </div>
         </tbody>
       </table>
