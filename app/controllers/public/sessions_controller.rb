@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 class Public::SessionsController < Devise::SessionsController
-  # before_action :configure_sign_in_params, only: [:create]
+  #before_action :configure_sign_in_params, only: [:create]
+  before_action :customer_state, only: [:create]
 
-  protected
+
+protected
 # 退会しているかを判断するメソッド
 def customer_state
   ## 【処理内容1】 入力されたemailからアカウントを1件取得
@@ -13,7 +15,7 @@ def customer_state
   ## 【処理内容2】 取得したアカウントのパスワードと入力されたパスワードが一致してるかを判別
   if @customer.valid_password?(params[:customer][:password])
     ## 【処理内容3】
-    if current_customer.valid_password?(params[:email][:password]) && (current_customer.is_deleted == true )
+    if @customer.valid_password?(params[:customer][:password]) && (@customer.is_deleted == true )
         flash[:notice] = "退会済みです。再度ご登録をしてご利用ください。"
         redirect_to root_path
     else
@@ -21,6 +23,13 @@ def customer_state
     end
   end
 end
+
+private
+
+def customer_params
+    params.require(:customer).permit(:is_deleted,:email,:family_name, :first_name,:family_name_kana, :first_name_kana, :post_code, :address, :phone_number)
+end
+
 
   # GET /resource/sign_in
   #def new
