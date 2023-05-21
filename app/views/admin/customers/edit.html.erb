@@ -1,2 +1,41 @@
-<h1>Admin::Customers#edit</h1>
-<p>Find me in app/views/admin/customers/edit.html.erb</p>
+<div class='container' >
+  <div class='row'>
+    <div class='col'>
+    <%= form_with model: @customer ,url:admin_customer_path, method: :patch, local: true do |f| %>
+      <table><br>
+        <thead>
+          <th><h5><%= @customer.family_name %><%= @customer.first_name %>さんの会員情報編集</h></th>
+        </thead>
+        <tbody>
+          <div class='form-group'>
+            <tr><td>会員ID</td><td><%= @customer.id %></td></tr>
+            <tr><td>氏名</td><td><%= f.text_field :family_name %></td>
+              <td><%= f.text_field :first_name %></td>
+            </tr>
+            <tr><td>フリガナ</td><td><%= f.text_field :family_name_kana %></td>
+              <td><%= f.text_field :first_name_kana %></td>
+            </tr>
+            <tr><td>郵便番号</td><td><%= f.text_field :post_code %></td>
+            </tr>
+            <tr><td>住所</td><td><%= f.text_field :address %></td>
+            </tr>
+            <tr><td>電話番号</td><td><%= f.text_field :phone_number %></td>
+            </tr>
+            <tr><td>メールアドレス</td><td><%= f.text_field :email %></td>
+            </tr>
+            <tr><td>会員ステータス</td>
+              <td>
+                <%= f.radio_button :is_deleted, false %>
+                <%= f.label :is_deleted, '有効' %>
+                <%= f.radio_button :is_deleted, true %>
+                <%= f.label :is_deleted , '退会' %>
+              </td>
+            </tr>
+            <tr><td><%= f.submit '変更を保存',class:'btn btn-success' %></td></tr>
+          </div>
+        </tbody>
+      </table>
+    <% end %>
+    </div>
+  </div>
+</div>
