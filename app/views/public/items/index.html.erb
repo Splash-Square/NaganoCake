@@ -1,2 +1,28 @@
-<h1>Public::Items#index</h1>
-<p>Find me in app/views/public/items/index.html.erb</p>
+<div class="container px-5 px-sm-0">
+  <div class="row p-5">
+    <h2>商品一覧</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      
+    </div>
+    <div class="col-md-8 offset-md-1 mx-auto d-flex flex-wrap">
+
+      <% @items.each do |item| %>
+        <div class="col">
+          <% if item.is_selling == true %>
+            <% if item.image.attached? %>
+              <%= link_to item_path(item.id) do %>
+                <%= image_tag item.image, size: "200x200" %>
+              <% end %>
+            <% end %>
+            <p class=""><%= item.item_name %></p>
+            <p><%= (item.price * 1.1).round.to_s(:delimited)  %>円</p>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <%= paginate @items %>
+
+  </div>
+</div>
