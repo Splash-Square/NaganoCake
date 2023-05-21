@@ -33,8 +33,12 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     post 'orders/confirm'
     get 'homes/about'
     resources :cart_items, only: [:index, :update, :destroy, :create]    #カート内商品一括削除all_destroy未記述
-    resources :customers, only: [:show, :edit, :update]                   #退会処理withdraw未記述
-    get 'customers/confirm_withdraw' =>"customers#confirm_withdraw"
+          #退会処理withdraw未記述
+    get 'customers/confirm_withdraw' => 'customers#confirm_withdraw', as: 'confirm_withdraw'
+    patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw'
+    get 'customers/information/edit' => 'customers#edit', as: 'customers_edit'
+    patch 'customers/information/update' => 'customers#update', as: 'customers_update'
+    get 'customers/information/show' => 'customers#show', as: 'customers_show'
     resources :items, only: [:index, :show]
     resources :registrations, only: [:new, :create]
     resources :sessions, only: [:new, :create, :destroy]
@@ -43,3 +47,4 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
+
