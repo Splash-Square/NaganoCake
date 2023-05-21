@@ -1,6 +1,9 @@
 <div class="container px-5 px-sm-0">
-  <div class="row">
+  <div class="row d-flex justify-content-between">
     <h2>ショッピングカート</h2>
+    <%= link_to "カートを空にする", cart_items_all_destroy_path, method: :delete, class: "btn btn-danger" %>
+  </div>
+  <div class="row">
     <div class="col-md-8 offset-md-1">
       <table class="table table-hover">
         <thead>

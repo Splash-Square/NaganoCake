@@ -33,6 +33,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     post 'orders/confirm'
     get 'homes/about'
     resources :cart_items, only: [:index, :update, :destroy, :create]    #カート内商品一括削除all_destroy未記述
+    delete 'cart_items/all_destroy' => 'cart_items#all_destroy'
     resources :customers, only: [:show, :edit, :update]                   #退会処理withdraw未記述
     get 'customers/confirm_withdraw' =>"customers#confirm_withdraw"
     resources :items, only: [:index, :show]
