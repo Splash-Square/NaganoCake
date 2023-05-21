@@ -11,14 +11,20 @@ class Public::CustomersController < ApplicationController
   def update
     if current_customer.update(customer_params)
       flash[:notice] = "User-introduction was successfully updated."
-      redirect_to customers_path
+      redirect_to customers_show_path
     else
       render :edit
     end
   end
 
   def withdraw
+    if current_customer.update(is_deleted: true)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
+
 
   private
 

@@ -35,9 +35,9 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     resources :cart_items, only: [:index, :update, :destroy, :create]    #カート内商品一括削除all_destroy未記述
           #退会処理withdraw未記述
     get 'customers/confirm_withdraw' => 'customers#confirm_withdraw', as: 'confirm_withdraw'
-    get 'customers/withdraw' => 'customers#withdraw', as: 'withdraw'
+    patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw'
     get 'customers/information/edit' => 'customers#edit', as: 'customers_edit'
-    get 'customers/information/update' => 'customers#update', as: 'customers_update'
+    patch 'customers/information/update' => 'customers#update', as: 'customers_update'
     get 'customers/information/show' => 'customers#show', as: 'customers_show'
     resources :items, only: [:index, :show]
     resources :registrations, only: [:new, :create]

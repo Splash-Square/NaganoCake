@@ -3,5 +3,5 @@
 これまでの購入履歴が閲覧できなくなります。</br>
 退会する場合は、「退会する」をクリックしてください。</p>
 
-<%= link_to '退会しない', edit_book_path(@book), class: "btn btn-sm btn-success" %>
-<%= link_to '退会する', edit_book_path(@book), class: "btn btn-sm btn-success" %>
+<%= link_to '退会しない', customers_show_path, class: "btn btn-sm btn-success" %>
+<%= link_to '退会する', withdraw_path, method: :patch, class: "btn btn-sm btn-success" %>
