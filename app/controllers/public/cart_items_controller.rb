@@ -14,14 +14,16 @@ class Public::CartItemsController < ApplicationController
 
   def create
     @cart_item = current_customer.cart_items.new(cart_item_params)
-    exist_item = current_customer.cart_items.find_by(item_id: params[:item_id])
+
+    # フォームで送った商品と同じものを探す
+    exist_item = current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id])
 
     if exist_item.present?
-      exist_item.quantity += params[:quantity].to_i
+      exist_item.quantity += params[:cart_item][:quantity].to_i
 
       exist_item.save
       redirect_to cart_items_path
-
+    # 通常の保存処理
     elsif @cart_item.save
       @cart_items = current_customer.cart_items.all
       render 'index'
