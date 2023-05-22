@@ -1,15 +1,27 @@
 class Public::CartItemsController < ApplicationController
   def index
     @cart_items = current_customer.cart_items.all
+    @totalprice = 0
   end
 
   def update
+    cart_item = CartItem.find(params[:id])
+
+    cart_item.update(quantity: params[:cart_item][:quantity])
+
+    redirect_to cart_items_path
   end
 
   def destroy
+    current_customer.cart_items.find(params[:id]).destroy
+
+    redirect_to cart_items_path
   end
 
   def all_destroy
+    current_customer.cart_items.destroy_all
+
+    redirect_to cart_items_path
   end
 
   def create
@@ -26,6 +38,7 @@ class Public::CartItemsController < ApplicationController
     # 通常の保存処理
     elsif @cart_item.save
       @cart_items = current_customer.cart_items.all
+      @totalprice = 0
       render 'index'
     else
       redirect_back fallback_location: root_path
