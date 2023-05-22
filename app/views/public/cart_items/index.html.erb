@@ -26,6 +26,7 @@
 
                   <%= f.submit "変更", class: "btn btn-success" %>
                 <% end %>
+                
               </td>
               <td class="">
                 <%= (cart_item.item.price * 1.1 * cart_item.quantity.to_i).round.to_s(:delimited)  %>
