@@ -27,13 +27,14 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
 
   scope module: :public do
     root to: 'homes#top'
-    resources :addresses, only: [:index, :edit, :create, :update, :destroy]
-    resources :orders, only: [:new, :index, :show]
-    get 'orders/completed'
+
     post 'orders/confirm'
     get 'homes/about'
-    resources :cart_items, only: [:index, :update, :destroy, :create]    #カート内商品一括削除all_destroy未記述
-          #退会処理withdraw未記述
+    delete 'cart_items/all_destroy' => 'cart_items#all_destroy', as: 'all_destroy'
+    get 'orders/completed'
+    resources :addresses, only: [:index, :edit, :create, :update, :destroy]
+    resources :orders, only: [:new, :index, :show]
+    resources :cart_items, only: [:index, :update, :destroy, :create]
     get 'customers/confirm_withdraw' => 'customers#confirm_withdraw', as: 'confirm_withdraw'
     patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw'
     get 'customers/information/edit' => 'customers#edit', as: 'customers_edit'
