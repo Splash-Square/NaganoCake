@@ -12,13 +12,13 @@
 
   </head>
   <body>
-    <% if admin_signed_in? %>
+    <% if request.path.match(/\/admin(\/)?/) %>
     <p>admin</p>
       <%= render 'layouts/headeradmin' %>
     <% else %>
     <p>customer</p>
       <%= render 'layouts/headercustomer' %>
-
+    
     <% end %>
       <main>
         <p id="notice"><%= notice %></p>
