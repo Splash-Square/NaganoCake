@@ -27,15 +27,14 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
 
   scope module: :public do
     root to: 'homes#top'
-
-    post 'orders/confirm'
+    post 'orders/confirm' => 'orders#confirm', as: 'orders_confirm'
     get 'homes/about'
     delete 'cart_items/all_destroy' => 'cart_items#all_destroy', as: 'all_destroy'
     get 'orders/completed'
     resources :addresses, only: [:index, :edit, :create, :update, :destroy]
     resources :orders, only: [:new, :index, :show]
     resources :cart_items, only: [:index, :update, :destroy, :create]
-    get 'customers/confirm_withdraw' => 'customers#confirm_withdraw', as: 'confirm_withdraw'
+    post 'customers/confirm_withdraw' => 'customers#confirm_withdraw', as: 'confirm_withdraw'
     patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw'
     get 'customers/information/edit' => 'customers#edit', as: 'customers_edit'
     patch 'customers/information/update' => 'customers#update', as: 'customers_update'
