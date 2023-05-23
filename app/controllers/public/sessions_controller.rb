@@ -18,13 +18,20 @@ def customer_state
     if @customer.valid_password?(params[:customer][:password]) && (@customer.is_deleted == true )
         flash[:notice] = "退会済みです。再度ご登録をしてご利用ください。"
         redirect_to root_path
-    else
-        redirect_to customers_show_path
     end
   end
 end
 
 private
+
+  def after_sign_in_path_for(resource)
+    customers_show_path
+  end
+
+  def after_sign_out_path_for(resource)
+    root_path
+  end
+
 
 def customer_params
     params.require(:customer).permit(:is_deleted,:email,:family_name, :first_name,:family_name_kana, :first_name_kana, :post_code, :address, :phone_number)
