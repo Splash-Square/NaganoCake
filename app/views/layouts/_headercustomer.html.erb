@@ -1,70 +1,28 @@
-<header>
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand" href="/"><span>LOGO</span></a>>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
-        <% if customer_signed_in? %>
-        <button type="button" class="btn btn-outline-dark">
-          <li>
-            <%=  link_to customers_show_path,class: 'nav-link text-dark' do %>
-              <i class=""></i> マイページ
-            <% end %>
-          </li>
-        </button>
-        <button type="button" class="btn btn-outline-dark">
-          <li>
-            <%=  link_to items_path ,class: 'nav-link text-dark' do %>
-              <i class=""></i> 商品一覧
-            <% end %>
-          </li>
-        </button>
-        <button type="button" class="btn btn-outline-dark">
-          <li>
-            <%=  link_to cart_items_path ,class: 'nav-link text-dark' do %>
-              <i class=""></i> カート
-            <% end %>
-          </li>
-        </button>
-        <button type="button" class="btn btn-outline-dark">
-          <li>
-            <%= link_to  destroy_customer_session_path, method: :delete, class: 'nav-link text-dark' do %>
-              <i class=""></i> ログアウト
-            <% end %>
-          </li>
-        </button>
-        <% else %>
-        <button type="button" class="btn btn-outline-dark">
-          <li>
-            <%= link_to root_path,class: 'nav-link text-dark' do %>
-              <i class=""></i> About
-            <% end %>
-          </li>
-        </button>
-        <button type="button" class="btn btn-outline-dark">
-          <li>
-            <%= link_to items_path,class: 'nav-link text-dark' do %>
-              <i class=""></i> 商品一覧
-            <% end %>
-          </li>
-        </button>
-        <button type="button" class="btn btn-outline-dark">
-          <li>
-            <%= link_to new_customer_registration_path,class: 'nav-link text-dark' do %>
-              <i class=""></i> 新規登録
-            <% end %>
-          </li>
-        </button>
-        <button type="button" class="btn btn-outline-dark">
-          <li>
-            <%= link_to customer_session_path ,class: 'nav-link text-dark' do %>
-              <i class=""></i> ログイン
-            <% end %>
-          </li>
-        </button>
-        <% end %>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
+<button type="button" class="btn btn-outline-dark">
+  <li>
+    <%=  link_to customers_show_path,class: 'nav-link text-dark' do %>
+      <i class=""></i> マイページ
+    <% end %>
+  </li>
+</button>
+<button type="button" class="btn btn-outline-dark">
+  <li>
+    <%=  link_to items_path ,class: 'nav-link text-dark' do %>
+      <i class=""></i> 商品一覧
+    <% end %>
+  </li>
+</button>
+<button type="button" class="btn btn-outline-dark">
+  <li>
+    <%=  link_to cart_items_path ,class: 'nav-link text-dark' do %>
+      <i class=""></i> カート
+    <% end %>
+  </li>
+</button>
+<button type="button" class="btn btn-outline-dark">
+  <li>
+    <%= link_to  destroy_customer_session_path, method: :delete, class: 'nav-link text-dark' do %>
+      <i class=""></i> ログアウト
+    <% end %>
+  </li>
+</button>
