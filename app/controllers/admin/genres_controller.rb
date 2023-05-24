@@ -8,7 +8,7 @@ class Admin::GenresController < ApplicationController
   end
 
   def create
-    @genre = Genre.newa
+    @genre = Genre.new
     @genre.save
 
   end
