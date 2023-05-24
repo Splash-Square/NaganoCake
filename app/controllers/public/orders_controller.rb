@@ -14,11 +14,14 @@ class Public::OrdersController < ApplicationController
   #def create
   #end
 
-  #def index
-  #end
+  def index
+    @order = Order.new
+    @orders = Order.all
+  end
 
-  #def show
-  #end
+  def show
+    
+  end
 
   private
 
