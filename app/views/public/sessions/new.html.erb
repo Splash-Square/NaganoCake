@@ -6,12 +6,13 @@
 
       <h1>ログイン</h1>
       <h2 class="title">会員の方はこちらからログイン</h2>
-
+        <br />
+        <br />
         <form>
           <%= form_with model: @customer, url:customer_session_path, local: true do |f| %>
             <div class="field">
               <%= f.label :メールアドレス %><br />
-              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", :size=>"60x10" %>
             </div>
         </form>
         <div class="field">
