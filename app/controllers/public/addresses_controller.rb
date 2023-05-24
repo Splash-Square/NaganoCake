@@ -16,6 +16,12 @@ class Public::AddressesController < ApplicationController
     @address = Address.find(params[:id])
   end
 
+<<<<<<< HEAD
+  def create
+  end
+
+=======
+>>>>>>> d0c0f50a674646d99b629fac2a5edfe1b9965f3a
   def update
   @address = Address.find(params[:id])
   @address.customer_id = current_customer.id

@@ -32,7 +32,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     delete 'cart_items/all_destroy' => 'cart_items#all_destroy', as: 'all_destroy'
     get 'orders/completed'
     resources :addresses, only: [:index, :edit, :create, :update, :destroy]
-    resources :orders, only: [:new, :index, :show]
+    resources :orders, only: [:new, :index, :show, :create]
     resources :cart_items, only: [:index, :update, :destroy, :create]
     post 'customers/confirm_withdraw' => 'customers#confirm_withdraw', as: 'confirm_withdraw'
     patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw'

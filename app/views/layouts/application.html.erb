@@ -9,23 +9,16 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-
   </head>
   <body>
-    <% if request.path.match(/\/admin(\/)?/) %>
-    <p>admin</p>
-      <%= render 'layouts/headeradmin' %>
-    <% else %>
-    <p>customer</p>
-      <%= render 'layouts/headercustomer' %>
-    
-    <% end %>
-      <main>
-        <p id="notice"><%= notice %></p>
-        <%= flash[:notice] %>
-        <%= yield %>
-
-      </main>
+    <header>
+      <%= render 'layouts/header' %>
+    </header>
+    <main>
+      <p id="notice"><%= notice %></p>
+      <%= flash[:notice] %>
+      <%= yield %>
+    </main>
     <%= render 'layouts/footer' %>
   </body>
 </html>
