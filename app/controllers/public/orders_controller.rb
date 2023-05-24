@@ -39,9 +39,9 @@ class Public::OrdersController < ApplicationController
   def create
     # 注文データを保存
     @order = Order.new(order_params)
-    
+
     @order.save
-    redirect_to orders_conpleted_path
+    redirect_to orders_completed_path
     # カート内商品の情報を一つずつ注文商品に格納
     # @order_detail = Order_detail.new
     # @cart_items = current_customer.cart_items.all
@@ -60,7 +60,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def show
-    
+
   end
 
   private
