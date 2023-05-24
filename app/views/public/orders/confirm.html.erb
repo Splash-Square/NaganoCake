@@ -1,0 +1,76 @@
+<div class="container px-5 px-sm-0">
+  <div class="row d-flex justify-content-between">
+    <h2>注文情報確認</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-8 offset-md-1">
+      <table class="table table-hover">
+        <thead>
+            <tr>
+              <th>商品名</th>
+              <th>単価（税込）</th>
+              <th>数量</th>
+              <th>小計</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <% @cart_items.each do |cart_item| %>
+            <tr>
+              <td>
+                <%= image_tag cart_item.item.image, size: "100x50" %>
+                <%= cart_item.item.item_name %>
+              </td>
+              <td><%= cart_item.item.with_tax_price.to_s(:delimited)  %></td>
+              <td>
+                <%= cart_item.quantity %>
+              </td>
+              <td>
+                <%= cart_item.subtotal.to_s(:delimited)  %>
+              </td>
+
+              <% @totalprice += cart_item.subtotal %>
+            </tr>
+            <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-2">
+      <table class="table">
+        <tr>
+          <th>送料</th>
+          <td><%= @neworder.postage %></td>
+        </tr>
+        <tr>
+          <th>商品合計</th>
+          <td><%= @totalprice.to_s(:delimited) %></td>
+        </tr>
+        <tr>
+          <th>請求金額</th>
+          <td><%= (@totalprice + @neworder.postage).to_s(:delimited) %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row py-3">
+    <h3>支払方法</h3>
+    <div class="col-md-8">
+      <%= @neworder.payment_method_i18n %>
+    </div>
+  </div>
+  <div class="row py-3">
+    <h3>お届け先</h3>
+    <div class="col-md-8">
+      <%= @neworder.post_code %>
+      <%= @neworder.address %>
+      <%= @neworder.name %>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center my-3">
+    <%= form_with model: @neworder, url: orders_path do |f| %>
+      <%#= f.hidden_field :item_id, :value => @item.id %>
+      
+      <%= f.submit "注文を確定する", class: "btn-success mx-auto" %>
+    <% end %>
+  </div>
+</div>
