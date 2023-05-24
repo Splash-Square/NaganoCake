@@ -3,7 +3,7 @@
 
 <h1>注文情報入力</h1><br />
 
-<%= form_with model: @neworder ,url:orders_confirm_path, local: true do |f| %>
+<%= form_with model: @order ,url:orders_confirm_path, local: true do |f| %>
   <div class="form-group">
     <h2>支払方法</h2>
     <%= f.radio_button :payment_method, Order.payment_methods.key(0) %>
