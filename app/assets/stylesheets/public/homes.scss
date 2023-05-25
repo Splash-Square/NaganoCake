@@ -1,3 +1,26 @@
 // Place all the styles related to the public/homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.navbar-brand {
+  background: url("logo.png") no-repeat left center;
+  background-size: contain;
+  height: 150px;
+  width: 250px;
+}
+
+.btn-danger {
+  background: rgba(217, 46, 78, 1)
+}
+
+.btn-light {
+  background: rgba(255, 172, 156, 1)
+}
+
+.btn-warning {
+  background: rgba(109, 126, 48, 1)
+}
+
+.btn-secondary {
+  background: rgba(70, 80, 71, 1)
+}
