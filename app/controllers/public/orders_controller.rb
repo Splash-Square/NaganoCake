@@ -66,6 +66,9 @@ class Public::OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @order_details = OrderDetail.all
+    @cart_items = current_customer.cart_items.all
+    @totalprice = 0
   end
 
   private
