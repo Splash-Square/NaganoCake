@@ -4,6 +4,6 @@ class Public::HomesController < ApplicationController
     @genres = Genre.all
   end
 
-  def about
-  end
+  #def about
+  #end
 end

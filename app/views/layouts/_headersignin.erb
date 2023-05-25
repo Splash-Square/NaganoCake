@@ -1,28 +1,30 @@
-<button type="button" class="btn btn-outline-dark">
-  <li>
-    <%= link_to root_path,class: 'nav-link text-dark' do %>
-      <i class=""></i> About
-    <% end %>
-  </li>
-</button>
-<button type="button" class="btn btn-outline-dark">
-  <li>
-    <%= link_to items_path,class: 'nav-link text-dark' do %>
-      <i class=""></i> 商品一覧
-    <% end %>
-  </li>
-</button>
-<button type="button" class="btn btn-outline-dark">
-  <li>
-    <%= link_to new_customer_registration_path,class: 'nav-link text-dark' do %>
-      <i class=""></i> 新規登録
-    <% end %>
-  </li>
-</button>
-<button type="button" class="btn btn-outline-dark">
-  <li>
-    <%= link_to customer_session_path ,class: 'nav-link text-dark' do %>
-      <i class=""></i> ログイン
-    <% end %>
-  </li>
-</button>
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+  <button type="button" class="btn btn-danger">
+    <li>
+      <%= link_to root_path,class: 'nav-link text-white' do %>
+        <i class=""></i> About
+      <% end %>
+    </li>
+  </button>
+  <button type="button" class="btn btn-light">
+    <li>
+      <%= link_to items_path,class: 'nav-link text-dark' do %>
+        <i class="fas fa-solid fa-layer-group"></i> 商品一覧
+      <% end %>
+    </li>
+  </button>
+  <button type="button" class="btn btn-warning">
+    <li>
+      <%= link_to new_customer_registration_path,class: 'nav-link text-white' do %>
+        <i class="fas fa-solid fa-user-plus"></i> 新規登録
+      <% end %>
+    </li>
+  </button>
+  <button type="button" class="btn btn-secondary">
+    <li>
+      <%= link_to customer_session_path ,class: 'nav-link text-white' do %>
+      <i class="fas fa-sign-in-alt"></i>ログイン
+      <% end %>
+    </li>
+  </button>
+</div>
