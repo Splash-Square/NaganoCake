@@ -1,28 +1,31 @@
+<%= stylesheet_link_tag 'public/sessions_login' %>
+
 <div class='container'>
   <div class='row'>
-    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
+    <div class="offset-2 col-6">
 
       <h1>ログイン</h1>
-      <h2>会員の方はこちらからログイン</h2>
-
-      <%= form_with model: @customer, url:customer_session_path, local: true do |f| %>
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </div>
-
+      <h2 class="title">会員の方はこちらからログイン</h2>
+        <br />
+        <br />
+        <form>
+          <%= form_with model: @customer, url:customer_session_path, local: true do |f| %>
+            <div class="field">
+              <%= f.label :メールアドレス %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", :size=>"60x10" %>
+            </div>
+        </form>
         <div class="field">
           <%= f.label :password %><br />
           <%= f.password_field :password, autocomplete: "current-password" %>
         </div>
-
-
+        </br>
         <div class="actions">
-          <%= f.submit "Log in",class: 'btn btn-sm btn-primary'%>
+          <%= f.submit "Log in",class: 'btn btn-sm btn-primary btn-block lg-3'%>
         </div>
       <% end %>
-
-      <h2>会員登録がお済でない方</h2>
+      </br>
+      <h2 class="title">会員登録がお済でない方</h2>
       <p><%= link_to 'こちら', new_customer_registration_path %> からログインしてください</p>
 
     </div>
