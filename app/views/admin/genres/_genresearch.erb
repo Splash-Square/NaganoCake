@@ -4,7 +4,7 @@
   </thead>
   <tbody>
     <% @genres.each do |genre| %>
-      <tr></tr><td><%= link_to genre.item_genre, items_path ,class: 'text-dark'  %></td></tr>
+      <tr></tr><td><%= link_to genre.item_genre, items_path(genre_id: genre.id) ,class: 'text-dark'  %></td></tr>
       <% end %>
     </tbody>
   </table>
