@@ -30,7 +30,7 @@
     <tr>
       <td>商品合計</td>
       <td>
-      <% number_with_delimiter(@totalprice += 150) %>
+      <%= number_with_delimiter(@order.billing_amount-@order.postage) %>
       </td>
     </tr>
     <tr>
