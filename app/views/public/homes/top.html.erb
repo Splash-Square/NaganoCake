@@ -1,29 +1,28 @@
 <div class="container">
-
-  <p>ようこそ、ながのCAKEへ！<br>
-  このサイトは、ケーキ販売のECサイトになります。<br>
-  会員でない方も商品の閲覧はできますが、<br>
-  購入には会員登録が必要となります。</p>
-
-  <h2>新着商品</h2>
-
-   <div class="col-md-8">
-
-        <% @new_items.each do |item| %>
-          <div class="col">
-            <% if item.is_selling == true %>
-              <% if item.image.attached? %>
-                <%= link_to item_path(item.id) do %>
-                  <%= image_tag item.image, size: "200x200" %>
-                <% end %>
-              <% end %>
-              <p class=""><%= item.item_name %></p>
-              <p>￥<%= (item.price * 1.1).round.to_s(:delimited)  %></p>
+  <div class="row">
+    <div class='col-md-3'>
+      <%= render 'admin/genres/genresearch',genres: @genres %>
+    </div>
+    <div class="col-md-8">
+    <p class="text-center">ようこそ、ながのCAKEへ！<br>
+    このサイトは、ケーキ販売のECサイトになります。<br>
+    会員でない方も商品の閲覧はできますが、<br>
+    購入には会員登録が必要となります。</p>
+    <h2>新着商品</h2>
+    <% @new_items.each do |item| %>
+      <div class="col">
+        <% if item.is_selling == true %>
+          <% if item.image.attached? %>
+            <%= link_to item_path(item.id) do %>
+              <%= image_tag item.image, size: "200x200" %>
             <% end %>
-          </div>
+          <% end %>
+          <p class=""><%= item.item_name %></p>
+          <p>￥<%= (item.price * 1.1).round.to_s(:delimited)  %></p>
         <% end %>
       </div>
-
-  <p><%= link_to "全ての商品を見る＞", items_path %></p>
-
+    <% end %>
+    <p><%= link_to "全ての商品を見る＞", items_path, class: 'float-right' %></p>
+    </div>
+  </div>
 </div>
