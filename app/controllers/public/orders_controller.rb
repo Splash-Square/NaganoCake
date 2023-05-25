@@ -39,28 +39,34 @@ class Public::OrdersController < ApplicationController
   def create
     # 注文データを保存
     @order = Order.new(order_params)
-
     @order.save
-    redirect_to orders_completed_path
-    # カート内商品の情報を一つずつ注文商品に格納
-    # @order_detail = Order_detail.new
-    # @cart_items = current_customer.cart_items.all
 
-    # @cart_items.each do |cart_item|
-    #   @order_detail.item_id = cart_item.item_id
-    #   @order_detail.order_id = @order.id
-    #   @order_detail.quantity = cart_item.quantity
-    #   @order_detail.transaction_price = @order.billing_amount
-    # end
+    # カート内商品の情報を一つずつ注文商品に格納してテーブル作成
+    @cart_items = current_customer.cart_items.all
+
+    @cart_items.each do |cart_item|
+      @order_detail = OrderDetail.new
+      @order_detail.item_id = cart_item.item_id
+      @order_detail.order_id = @order.id
+      @order_detail.quantity = cart_item.quantity
+      @order_detail.transaction_price = cart_item.item.with_tax_price
+
+      @order_detail.save
+    end
+    # カート内商品を全削除
+    current_customer.cart_items.destroy_all
+
+    redirect_to orders_completed_path
   end
 
   def index
-    @order = Order.new
-    @orders = Order.all
+    @orders = current_customer.orders.all
+    # @order_details = current_customer.orders.orderdetails.all
   end
 
   def show
-
+    @order = Order.find(params[:id])
+    @order_details = @order.order_details.all
   end
 
   private

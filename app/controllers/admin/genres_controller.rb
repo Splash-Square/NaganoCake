@@ -8,11 +8,9 @@ before_action :authenticate_admin!
   end
 
   def create
-
     @genre = Genre.new(genre_params)
     @genre.save
-    redirect_to admin_genres_path
-
+    redirect_to admin_genres
   end
 
   def edit

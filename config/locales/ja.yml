@@ -5,7 +5,9 @@
           credit_card: "クレジットカード"
           transfer: "銀行振込"
 
-ja:
-  time:
-    formats:
-      default: "%Y/%m/%d %H:%M:%S"
+        order_status:
+          payment_pending: "入金待ち"
+          payment_confirmed: "入金確認"
+          in_production: "製作中"
+          preparing_for_shipping: "発送準備中"
+          shipped: "発送済み"
