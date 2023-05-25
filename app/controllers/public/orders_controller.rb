@@ -1,4 +1,7 @@
 class Public::OrdersController < ApplicationController
+
+  before_action :authenticate_customer!
+
   def new
     @order = Order.new
     @order.customer_id = current_customer.id
@@ -60,12 +63,13 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
-    @order_details = OrderDetail.all
-    @orders = Order.all
+    @orders = current_customer.orders.all
+    # @order_details = current_customer.orders.orderdetails.all
   end
 
   def show
-
+    @order = Order.find(params[:id])
+    @order_details = @order.order_details.all
   end
 
   private

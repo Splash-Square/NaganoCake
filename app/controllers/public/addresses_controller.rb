@@ -1,5 +1,7 @@
 class Public::AddressesController < ApplicationController
 
+ before_action :authenticate_customer!
+
   def create
     @address = Address.new(address_params)
     @address.customer_id = current_customer.id
@@ -15,9 +17,6 @@ class Public::AddressesController < ApplicationController
   def edit
     @address = Address.find(params[:id])
   end
-
-  #def create
-  #end
 
   def update
   @address = Address.find(params[:id])
