@@ -9,4 +9,8 @@ class Item < ApplicationRecord
     (price * 1.1).floor
   end
 
+validates :item_description,        presence: true
+validates :price,                   presence: true
+validates :item_name,               presence: true
+
 end

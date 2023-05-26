@@ -1,11 +1,10 @@
-<div class="container px-5 px-sm-0">
-  <div class="row p-5">
-    <h2>商品一覧</h2>
-  </div>
+<div class="container">
   <div class="row">
-
-    <div class="col-8 offset-1 mx-auto d-flex flex-wrap">
-
+    <div class="col-md-3">
+      <%= render 'admin/genres/genresearch',genres: @genres %>
+    </div>
+    <div class="col-md-8">
+    <h2>商品一覧</h2>
       <% @items.each do |item| %>
         <div class="col">
           <% if item.is_selling == true %>
@@ -21,6 +20,5 @@
       <% end %>
     </div>
     <%= paginate @items %>
-
   </div>
 </div>
