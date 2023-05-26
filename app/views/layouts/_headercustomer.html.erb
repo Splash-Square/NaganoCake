@@ -1,28 +1,31 @@
-<button type="button" class="btn btn-outline-dark">
-  <li>
-    <%=  link_to customers_show_path,class: 'nav-link text-dark' do %>
-      <i class=""></i> マイページ
-    <% end %>
-  </li>
-</button>
-<button type="button" class="btn btn-outline-dark">
-  <li>
-    <%=  link_to items_path ,class: 'nav-link text-dark' do %>
-      <i class=""></i> 商品一覧
-    <% end %>
-  </li>
-</button>
-<button type="button" class="btn btn-outline-dark">
-  <li>
-    <%=  link_to cart_items_path ,class: 'nav-link text-dark' do %>
-      <i class=""></i> カート
-    <% end %>
-  </li>
-</button>
-<button type="button" class="btn btn-outline-dark">
-  <li>
-    <%= link_to  destroy_customer_session_path, method: :delete, class: 'nav-link text-dark' do %>
-      <i class=""></i> ログアウト
-    <% end %>
-  </li>
-</button>
+<%= stylesheet_link_tag 'public/homes' %>
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+    <button type="button" class="btn btn-vivid">
+      <li>
+        <%=  link_to customers_show_path,class: 'nav-link text-white' do %>
+          <i class="fas fa-solid fa-user"></i> マイページ
+        <% end %>
+      </li>
+    </button>
+    <button type="button" class="btn btn-pink">
+      <li>
+        <%=  link_to items_path ,class: 'nav-link text-dark' do %>
+          <i class="fas fa-solid fa-bars"></i> 商品一覧
+        <% end %>
+      </li>
+    </button>
+    <button type="button" class="btn btn-darkgleen">
+      <li>
+        <%=  link_to cart_items_path ,class: 'nav-link text-white' do %>
+          <i class="fas fa-solid fa-cart-arrow-down"></i> カート
+        <% end %>
+      </li>
+    </button>
+    <button type="button" class="btn btn-deep">
+      <li>
+        <%= link_to  destroy_customer_session_path, method: :delete, class: 'nav-link text-white' do %>
+        <i class="fas fa-solid fa-arrow-right"></i> ログアウト
+        <% end %>
+      </li>
+    </button>
+</div>
