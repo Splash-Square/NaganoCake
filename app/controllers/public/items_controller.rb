@@ -5,7 +5,7 @@ class Public::ItemsController < ApplicationController
     else
       @items = Item.page(params[:page])
     end
-    
+
     #@items = Item.looks(params[:genre_id])
     @genres = Genre.all
   end
