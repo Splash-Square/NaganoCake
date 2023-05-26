@@ -1,6 +1,11 @@
 class Public::ItemsController < ApplicationController
   def index
-    @items = Item.page(params[:page])
+    if params[:genre_id] != nil
+      @items=Item.where(genre_id: params[:genre_id]).page(params[:page])
+    else
+      @items = Item.page(params[:page])
+    end
+
     #@items = Item.looks(params[:genre_id])
     @genres = Genre.all
   end
