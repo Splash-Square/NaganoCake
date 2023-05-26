@@ -6,3 +6,4 @@
 //= link admin/genres.css
 //= link public/items.css
 //= link public/customers.css
+//= link public/cart_items.css

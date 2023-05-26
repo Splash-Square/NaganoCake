@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag 'public/cart_items' %>
 <div class="container px-5 px-sm-0">
   <div class="row d-flex justify-content-between">
     <h2>ショッピングカート</h2>
@@ -5,8 +6,8 @@
   </div>
   <div class="row">
     <div class="col-md-10 offset-md-1">
-      <table class="table table-hover">
-        <thead>
+      <table class="table table-hover table-light table-bordered">
+        <thead class="">
             <tr>
               <th>商品名</th>
               <th>単価（税込）</th>
@@ -48,7 +49,7 @@
       <%= link_to "買い物を続ける", root_path, class: "btn btn-primary" %>
     </div>
     <div class="col">
-      <table class="table">
+      <table class="table border-dark">
         <th>合計金額</th>
         <td><%= @totalprice.to_s(:delimited) %></td>
       </table>
