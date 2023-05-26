@@ -1,10 +1,10 @@
-<table class="table table-hover table-inverse table-bordered table-danger" style="width: 80%">
-  <thead>
-    <tr><th class="text-center">ジャンル検索</th></tr>
-  </thead>
-  <tbody>
-    <% @genres.each do |genre| %>
-      <tr></tr><td><%= link_to genre.item_genre, items_path(genre_id: genre.id) ,class: 'text-dark'  %></td></tr>
-      <% end %>
-    </tbody>
-  </table>
+<%= stylesheet_link_tag 'admin/genres' %>
+<ul class="list-group list-group-flush genrelist">
+  <li class="list-group-item text-center title">ジャンル検索</li>
+  <% @genres.each do |genre| %>
+  <li class="list-group-item">
+    <%= link_to genre.item_genre, items_path(genre_id: genre.id) ,class: 'text-dark'  %>
+  </li>
+  <% end %>
+</ul>
+
