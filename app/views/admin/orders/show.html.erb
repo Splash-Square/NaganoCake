@@ -2,7 +2,9 @@
   <div class='row'>
     <div class='col'>
       <div class="d-flex align-items-center mb-4">
-        <h5 class="m-0"><%= @order.name %></h5>
+        <%= link_to admin_customer_path(@order.customer.id),class: 'text-dark' do %>
+          <h5 class="m-0"><%= @order.name %></h5>
+        <% end %>
         <p class="m-0">さんの</p>
         <h5 class="m-0">注文履歴</h5>
       </div>
