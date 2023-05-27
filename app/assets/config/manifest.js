@@ -4,3 +4,5 @@
 //= link public/homes.css
 //= link public/registration.css
 //= link admin/genres.css
+//= link public/items.css
+//= link public/customers.css
