@@ -1,26 +1,27 @@
+<%= stylesheet_link_tag 'public/homes' %>
 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-  <button type="button" class="btn btn-danger">
+  <button type="button" class="btn btn-vivid">
     <li>
-      <%= link_to root_path,class: 'nav-link text-white' do %>
-        <i class=""></i> About
+      <%= link_to homes_about_path,class: 'nav-link text-white' do %>
+        <i class="fas fa-solid fa-cookie-bite"></i> About
       <% end %>
     </li>
   </button>
-  <button type="button" class="btn btn-light">
+  <button type="button" class="btn btn-pink">
     <li>
       <%= link_to items_path,class: 'nav-link text-dark' do %>
         <i class="fas fa-solid fa-layer-group"></i> 商品一覧
       <% end %>
     </li>
   </button>
-  <button type="button" class="btn btn-warning">
+  <button type="button" class="btn btn-darkgleen">
     <li>
       <%= link_to new_customer_registration_path,class: 'nav-link text-white' do %>
         <i class="fas fa-solid fa-user-plus"></i> 新規登録
       <% end %>
     </li>
   </button>
-  <button type="button" class="btn btn-secondary">
+  <button type="button" class="btn btn-deep">
     <li>
       <%= link_to customer_session_path ,class: 'nav-link text-white' do %>
       <i class="fas fa-sign-in-alt"></i>ログイン
