@@ -37,7 +37,16 @@
 }
 
 .text_main {
+  display: inline;
+  text-align: center;
+  margin-top : 60px;
   font-weight: bold;
+  font-size: 17px;
+  background: linear-gradient(to top, rgba(232,221,193,1) 0% 50%, rgba(0,0,0,0) 50% 100%)
+}
+
+.text_top {
+  margin-top : 60px;
 }
 
 .about_image {
@@ -47,4 +56,17 @@
 
 .text_newitems {
   margin-right: 600px;
+}
+
+.button_edit {
+  margin-top : 30px;
+}
+
+.actions {
+  display: inline;
+  margin: 30px;
+}
+
+.confirm_text {
+  margin-top: 70px;
 }
