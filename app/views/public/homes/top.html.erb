@@ -1,28 +1,41 @@
+<%= stylesheet_link_tag 'public/homes' %>
 <div class="container">
   <div class="row">
     <div class='col-3'>
       <%= render 'admin/genres/genresearch',genres: @genres %>
     </div>
-    <div class="col-8">
-    <p class="text-center">ようこそ、ながのCAKEへ！<br>
+    <div class="col-8 back_image">
+    <p class="text-center text_main">
+      <br>
+      <br>
+      <br>
+      ようこそ、ながのCAKEへ！<br>
     このサイトは、ケーキ販売のECサイトになります。<br>
     会員でない方も商品の閲覧はできますが、<br>
     購入には会員登録が必要となります。</p>
-    <h2>新着商品</h2>
+  </div>
+    <div class='offset-4'>
+    </div>
+   <div class="row">
+    <h2>新着商品</h2></br>
+    </div>
     <div class="row">
+    <div class='offset-3'>
+    </div>
     <% @new_items.each do |item| %>
+        <div class='col-2'>
         <% if item.is_selling == true %>
           <% if item.image.attached? %>
             <%= link_to item_path(item.id) do %>
-              <%= image_tag item.image, size: "200x200" %>
+              <%= image_tag item.image, size: "150x150" %>
             <% end %>
           <% end %>
-          <p class=""><%= item.item_name %></p>
+      <%= item.item_name %>
           <p>￥<%= (item.price * 1.1).round.to_s(:delimited)  %></p>
         <% end %>
+      </div>
     <% end %>
     </div>
-    <p><%= link_to "全ての商品を見る＞", items_path, class: 'float-right' %></p>
-    </div>
   </div>
+  <p><%= link_to "全ての商品を見る＞", items_path, class: 'float-right' %></p>
 </div>
