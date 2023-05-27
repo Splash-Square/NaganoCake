@@ -12,7 +12,6 @@
           （全<%= @genre_count.present? ? @genre_count : @item_count %>件）
         </h5>
       <div class="row">
-
       <% @items.each do |item| %>
       <div class='col-3'>
             <% if item.is_selling == true %>
@@ -29,5 +28,6 @@
       </div>
     </div>
     <%= paginate @items %>
+
   </div>
 </div>

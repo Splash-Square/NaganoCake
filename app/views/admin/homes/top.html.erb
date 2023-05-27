@@ -15,13 +15,16 @@
         <tbody>
         <% @orders.each do |order| %>
           <tr>
-            <td><%=  order.created_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
+            <td><%= link_to admin_order_path(order.id) ,class: 'text-dark' do %>
+              <%=  order.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+              <% end %>
+            </td>
             <td><%= link_to orders_customer_admin_order_path(order.customer_id) ,class: 'text-dark' do %>
-                <%= order.name %>
+                <%= order.customer.family_name + " " + order.customer.first_name %>
                 <% end %>
               </td>
             <td><%= order.order_details.sum(:quantity) %></td>
-            <td><%= order.order_status %></td>
+            <td><%= order.order_status_i18n %></td>
           </tr>
         <% end %>
         <%= paginate @orders %>
