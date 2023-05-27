@@ -50,8 +50,9 @@
               <th>製作ステータス</th>
             </tr>
         </thead>
+
         <tbody>
-            <% @order_details.each do |order_detail| %>
+          <% @order_details.each do |order_detail| %>
             <tr>
               <td>
                 <%= order_detail.item.item_name %>
@@ -66,7 +67,7 @@
               <td>
                 <%= form_with model: order_detail, url: admin_order_detail_path(order_detail.id), method: :patch do |f| %>
                   <%= f.select :crafting_status, OrderDetail.crafting_statuses.keys.map {|k| [I18n.t("enums.order_detail.crafting_status.#{k}"), k]} %>
-                  <%= f.submit "変更", class: "btn btn-success" %>
+                  <%= f.submit "更新", class: "btn btn-success" %>
                 <% end %>
               </td>
             </tr>
