@@ -5,8 +5,14 @@
       <%= render 'admin/genres/genresearch',genres: @genres %>
     </div>
     <div class="col-8 d-flex flex-wrap">
-      <h2 class="item_index">商品一覧</h2>
+        <h2>
+          <%= @genre.present? ? @genre.item_genre + "一覧" : "商品一覧" %>
+        </h2>
+        <h5>
+          （全<%= @genre_count.present? ? @genre_count : @item_count %>件）
+        </h5>
       <div class="row">
+
       <% @items.each do |item| %>
       <div class='col-3'>
             <% if item.is_selling == true %>
