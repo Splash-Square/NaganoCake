@@ -4,16 +4,18 @@
     <div class="col-3">
       <%= render 'admin/genres/genresearch',genres: @genres %>
     </div>
-    <div class="col-8 d-flex flex-wrap">
+    <div class="col-8">
+      <div class="d-flex">
         <h2>
           <%= @genre.present? ? @genre.item_genre + "一覧" : "商品一覧" %>
         </h2>
         <h5>
           （全<%= @genre_count.present? ? @genre_count : @item_count %>件）
         </h5>
+      </div>
       <div class="row">
       <% @items.each do |item| %>
-      <div class='col-3'>
+      <div class='col-4'>
             <% if item.is_selling == true %>
               <% if item.image.attached? %>
                 <%= link_to item_path(item.id) do %>
