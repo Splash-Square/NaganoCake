@@ -7,3 +7,5 @@
 //= link public/items.css
 //= link public/customers.css
 //= link public/cart_items.css
+//= link public/orders.css
+//= link admin/orders.css
