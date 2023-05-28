@@ -7,7 +7,7 @@
         <% if customer_signed_in? %>
           <h4 class="navbar-text mt-5">ようこそ、<%= current_customer.family_name %>さん！</h4>
         <% end %>
-        <div class="col-6 .px-0 ml-auto headers">
+        <div class="ml-auto headers">
          <div class="collapse navbar-collapse align-items-center" id="navbarNavDropdown">
           <ul class="navbar-nav ml-auto">
           <% if admin_signed_in? %>
