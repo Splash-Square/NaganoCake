@@ -95,12 +95,6 @@ ActiveRecord::Schema.define(version: 2023_05_17_045223) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "genrus", force: :cascade do |t|
-    t.string "item_genre", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "items", force: :cascade do |t|
     t.integer "genre_id", null: false
     t.text "item_description", null: false
