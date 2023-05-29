@@ -44,12 +44,12 @@
       </table>
     </div>
   </div>
-  <div class="row d-flex justify-content-between">
-    <div class="col">
+  <div class="row d-flex">
+    <div class="col shop_continue">
       <%= link_to "買い物を続ける", root_path, class: "btn btn-primary" %>
     </div>
-    <div class="col">
-      <table class="table border-dark">
+    <div class="col totalprice">
+      <table class="table table-light table-borderless">
         <th>合計金額</th>
         <td><%= @totalprice.to_s(:delimited) %></td>
       </table>
