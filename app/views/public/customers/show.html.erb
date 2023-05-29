@@ -1,0 +1,38 @@
+<%= stylesheet_link_tag 'public/customers' %>
+<div class="container">
+  <div class='offset-2'>
+  <h2 class="mypage">マイページ</h2>
+  <h2>登録情報</h2>
+  <p><%= link_to '編集する', customers_edit_path,class: 'text-white btn btn-sm btn-deep' %></p>
+
+  <table>
+    <tr>
+    <th>氏名</th>
+      <td><%= current_customer.family_name %><%= current_customer.first_name %></td>
+    </tr>
+    <tr>
+    <th>カナ</th>
+      <td><%= current_customer.family_name_kana %><%= current_customer.first_name_kana %></td>
+    </tr>
+    <tr>
+    <th>郵便番号</th>
+      <td><%= current_customer.post_code %></td>
+    </tr>
+    <tr>
+    <th>住所</th>
+      <td><%= current_customer.address %></td>
+    </tr>
+      <th>電話番号</th>
+      <td><%= current_customer.phone_number %></td>
+    </tr>
+      <th>メールアドレス</th>
+      <td><%= current_customer.email %></td>
+    </tr>
+  </table>
+
+  <h4 class="headline">配送先</h4>
+  <%= link_to '一覧を見る', addresses_path,class: 'text-white btn btn-sm btn-deep' %>
+  <h4 class="headline"> 注文履歴</h4>
+  <%= link_to '一覧を見る', orders_path,class: 'text-white btn btn-sm btn-deep' %>
+</div>
+</div>

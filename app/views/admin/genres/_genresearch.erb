@@ -1,0 +1,9 @@
+<%= stylesheet_link_tag 'admin/genres' %>
+<ul class="list-group list-group-flush genrelist">
+  <li class="list-group-item text-center title">ジャンル検索</li>
+  <% @genres.each do |genre| %>
+  <li class="list-group-item">
+    <%= link_to genre.item_genre, items_path(genre_id: genre.id) ,class: 'text-dark'  %>
+  </li>
+  <% end %>
+</ul>

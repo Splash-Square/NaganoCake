@@ -1,0 +1,42 @@
+<%= stylesheet_link_tag 'public/cart_items' %>
+<div class="container">
+  <div class="row">
+   <div class="col-md-8 offset-md-1">
+
+      <h3>商品一覧
+        <%= link_to "＋",new_admin_item_path, class: 'btn float-right rounded-circle p-0 ',
+        style: 'width: 2rem; height: 2rem; display: flex; justify-content: center; align-items: center; box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4);' %>
+      </h3>
+      <table class="table table-hover table-light table-borderless">
+        <thead>
+            <tr>
+              <th>商品ID</th>
+              <th>商品名</th>
+              <th>税抜価格</th>
+              <th>ジャンル</th>
+              <th>ステータス</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @items.each do |item| %>
+            <tr>
+              <td><%= item.id %></td>
+              <td><%= link_to "#{item.item_name}", admin_item_path(item.id) %></td>
+              <td><%= item.price %></td>
+              <td><%= item.genre.item_genre %></td>
+              
+              <% if item.is_selling == true %>
+                <td class="text-success">販売中</td>
+              <% else %>
+                <td class="text-secondaryr">販売停止中</td>
+              <% end %>
+            </tr>
+            <% end %>
+        </tbody>
+      </table>
+      <div class="">
+       <%= paginate @items %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+// Place all the styles related to the public/orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.headline {
+  margin: 15px;
+  display:inline-block;
+  background-image: linear-gradient(transparent 60%, #eee 0%)
+}
+
+.group {
+  width : 600px;
+  padding-left : 50px;
+  background-color: #FFF;
+  border-radius: 20px 20px 20px 20px;
+}

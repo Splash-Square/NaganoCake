@@ -1,0 +1,38 @@
+<%= stylesheet_link_tag 'public/homes' %>
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+  <button type="button" class="btn btn-vivid">
+    <li>
+      <%= link_to admin_items_path,class: 'nav-link text-white' do %>
+        <i class=""></i> 商品一覧
+      <% end %>
+    </li>
+  </button>
+  <button type="button" class="btn btn-pink">
+    <li>
+      <%=  link_to admin_customers_path,class: 'nav-link text-dark' do %>
+        <i class=""></i> 会員一覧
+      <% end %>
+    </li>
+  </button>
+  <button type="button" class="btn btn-darkgleen">
+    <li>
+      <%=  link_to admin_root_path ,class: 'nav-link text-white' do %>
+        <i class=""></i> 注文履歴一覧
+      <% end %>
+    </li>
+  </button>
+  <button type="button" class="btn btn-deep">
+    <li>
+      <%=  link_to admin_genres_path ,class: 'nav-link text-white' do %>
+        <i class=""></i> ジャンル一覧
+      <% end %>
+    </li>
+  </button>
+  <button type="button" class="btn btn-cream">
+    <li>
+      <%= link_to destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' do %>
+        <i class=""></i> ログアウト
+      <% end %>
+    </li>
+  </button>
+</div>

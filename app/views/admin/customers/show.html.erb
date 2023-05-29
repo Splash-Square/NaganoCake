@@ -1,0 +1,32 @@
+<%= stylesheet_link_tag 'admin/orders' %>
+<div class='container' >
+  <div class='row'>
+    <div class='col'>
+    <table class="table table-light table-borderless"><br>
+      <thead>
+        <th><h4><%= @customer.family_name %><%= @customer.first_name %>さんの会員詳細</h4></th>
+      </thead>
+
+      <tbody class="show_body">
+        <tr><td class="title">会員ID</td>             <td><%= @customer.id %></td></tr>
+        <tr><td class="title">氏名</td>               <td><%= @customer.family_name %> <%= @customer.first_name %></td></tr>
+        <tr><td class="title">フリガナ</td>           <td><%= @customer.family_name_kana %> <%= @customer.first_name_kana %></td></tr>
+        <tr><td class="title">郵便番号</td>           <td><%= @customer.post_code %></td></tr>
+        <tr><td class="title">住所</td>               <td><%= @customer.address %></td></tr>
+        <tr><td class="title">電話番号</td>           <td><%= @customer.phone_number %></td></tr>
+        <tr><td class="title">メールアドレス</td>     <td><%= @customer.email %></td></tr>
+        <tr><td class="title">会員ステータス</td>
+          <% if @customer.is_deleted == true %>
+            <td class= text-secondary>退会</td>
+            <% else %>
+            <td class= text-success>有効</td>
+          <% end %>
+        </tr>
+        <tr><td><%= link_to '編集する', edit_admin_customer_path(params[:id]),class:'btn btn-success' %></td>
+          <td><%= link_to '注文一覧を見る', admin_root_path,class:'btn btn-primary' %></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>

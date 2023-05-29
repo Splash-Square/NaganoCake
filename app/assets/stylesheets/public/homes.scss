@@ -1,0 +1,77 @@
+// Place all the styles related to the public/homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.navbar-brand {
+  background: url("logo.png") no-repeat left center;
+  background-size: contain;
+  height: 150px;
+  width: 250px;
+}
+
+.btn-vivid {
+  background: rgba(217, 46, 78, 1);
+}
+
+.btn-pink {
+  background: rgba(255, 172, 156, 1);
+}
+
+.btn-darkgleen {
+  background: rgba(109, 126, 48, 1);
+}
+
+.btn-deep {
+  background: rgba(70, 80, 71, 1);
+}
+
+.btn-cream {
+  background: rgba(231, 231, 231, 1);
+}
+
+
+.back_image {
+  height: 500px;
+  background-image: image-url('homestop.png');
+  background-size: cover;
+}
+
+.text_main {
+  display: inline;
+  text-align: center;
+  margin-top : 60px;
+  font-weight: bold;
+  font-size: 17px;
+  background: linear-gradient(to top, rgba(232,221,193,1) 0% 50%, rgba(0,0,0,0) 50% 100%)
+}
+
+.text_top {
+  margin-top : 60px;
+}
+
+.about_image {
+  height: 300px;
+  width: 400px;
+}
+
+.text_newitems {
+  margin-right: 600px;
+}
+
+.button_edit {
+  margin-top : 30px;
+}
+
+.actions {
+  display: inline;
+  margin: 30px;
+}
+
+.confirm_text {
+  margin-top: 70px;
+}
+
+.headers {
+  margin-bottom: 40px;
+  margin-top: 50px;
+}

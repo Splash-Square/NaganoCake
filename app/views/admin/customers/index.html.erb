@@ -1,0 +1,38 @@
+<%= stylesheet_link_tag 'public/cart_items' %>
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col'>
+      <h3>会員一覧</h3>
+      <table class="table table-hover table-light table-borderless">
+        <thead>
+          <tr>
+            <th>会員ID</th>
+            <th>氏名</th>
+            <th>メールアドレス</th>
+            <th>ステータス</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @customers.each do |customer| %>
+          <tr>
+            <td><%= customer.id %></td>
+            <td><%= link_to admin_customer_path(customer.id) ,class: 'text-dark' do %>
+            <%= customer.family_name + " " + customer.first_name %>
+            <% end %>
+            </td>
+            <td><%= customer.email %></td>
+            <td><% if customer.is_deleted == true %>
+            <p class= text-secondary>退会</p>
+            <% else %>
+            <p class= text-success>有効</p>
+            <% end %>
+            </td>
+          </tr>
+        <% end %>
+        <%= paginate @customers %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

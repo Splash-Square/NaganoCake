@@ -1,0 +1,19 @@
+// Place all the styles related to the admin/orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.table {
+    border-radius: 20px 20px 20px 20px;
+    border-style:none;
+}
+
+.order_show_table {
+  background-color: #FFF;
+  border-radius: 20px 20px 20px 20px;
+}
+
+/*customers/show/会員詳細*/
+.title {
+  margin-left: 60px;
+  width: 300px;
+}

@@ -1,0 +1,93 @@
+<%= stylesheet_link_tag 'public/homes' %>
+<div class="container">
+  <div class='offset-2 col-9'>
+    <h1>会員情報編集</h1>
+
+            <%= form_with model: current_customer, url: customers_update_path, local: true do |f| %>
+          <table>
+            <tr>
+              <th>名前</th>
+                <td>
+                  <div class="field">
+                    <br />
+                    <%= f.text_field :family_name, autofocus: true, class: "" %>
+                  </div>
+                </td>
+                <td>
+                  <div class="field">
+                    <br />
+                    <%= f.text_field :first_name, autofocus: true, class: "" %>
+                  </div>
+                </td>
+            </tr>
+
+            <tr>
+              <th>フリガナ</th>
+                <td>
+                  <div class="field">
+                    <br />
+                    <%= f.text_field :family_name_kana, autofocus: true, class: "" %>
+                  </div>
+                </td>
+                <td>
+                  <div class="field">
+                    <br />
+                    <%= f.text_field :first_name_kana, autofocus: true, class: "" %>
+                  </div>
+                </td>
+            </tr>
+
+            <tr>
+              <th>メールアドレス</th>
+                <td>
+                  <div class="field">
+                    <br />
+                    <%= f.email_field :email, autofocus: true, class: "email" %>
+                  </div>
+                </td>
+            </tr>
+
+            <tr>
+              <th>郵便番号</th>
+                <td>
+                  <div class="field">
+                    <br />
+                    <%= f.text_field :post_code, autofocus: true, class: "" %>
+                  </div>
+                </td>
+            </tr>
+
+            <tr>
+              <th>住所</th>
+                <td>
+                  <div class="field">
+                    <br />
+                    <%= f.text_field :address, autofocus: true, class: "" %>
+                  </div>
+                </td>
+            </tr>
+
+            <tr>
+              <th>電話番号</th>
+                <td>
+                  <div class="field">
+                    <br />
+                    <%= f.text_field :phone_number, autofocus: true, class: "" %>
+                  </div>
+                </td>
+            </tr>
+          </table>
+
+          <div class="button_edit">
+            <div class="actions">
+                <%= f.submit '編集内容を保存',class: 'btn btn-sm btn-darkgleen text-white' %>
+            </div>
+            <% end %>
+            <div class="actions">
+                  <%= link_to "退会する", confirm_withdraw_path, method: :post, class: 'btn btn-sm btn-danger' %>
+            </div>
+          </div>
+  </div>
+</div>
+
+
