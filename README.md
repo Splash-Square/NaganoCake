@@ -41,7 +41,7 @@ $ rails s
 
 # 使用したgem
 
-* devis
+* devise
 * fontawesome
 * kaminari
 * enum-help
@@ -54,13 +54,13 @@ $ rails s
 ![スクリーンショット 2023-05-29 111702](https://github.com/Splash-Square/NaganoCake/assets/126881400/ebb10f5a-de8c-44b2-aa74-7d79c0bc0695)
 
 # 開発者
-でんすけ
+でんすけ Github:[densuke5G](https://github.com/densuke5G)
 
-あーさん
+あーさん Github:[kadaisakusei](https://github.com/kadaisakusei)
 
-さきち
+さきち Github:[728d](https://github.com/728d)
 
-うた
+うた Github:[keynoup](https://github.com/keynoup)
 
 
 
