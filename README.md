@@ -3,8 +3,7 @@
 # アプリケーション名
 ## ながのCAKE
 
-![スクリーンショット 2023-05-29 105730](https://github.com/Splash-Square/NaganoCake/assets/126881400/c338da7d-d0c6-4a43-98b1-fa09733533fb)
-
+![スクリーンショット 2023-05-29 112735](https://github.com/Splash-Square/NaganoCake/assets/126881400/b8f9a952-d83e-426f-88a4-4dc701382b84)
 
 ## ◆概要
 長野県にある小さな洋菓子店「ながのCAKE」の商品を通販するためのECサイト開発。
