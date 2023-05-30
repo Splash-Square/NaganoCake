@@ -28,6 +28,10 @@ $ git clone git@github.com:Splash-Square/NaganoCake.git
 
 $ bundle install
 
+$ yarn install
+
+$ rails db:migrate
+
 $ rails db:seed
 
 $ rails s
